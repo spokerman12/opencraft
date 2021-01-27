@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<button
+  className="float-right loading disabledBtn btn btn-primary btn-lg"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="textLayer"
+  >
+    Publish
+  </div>
+</button>
+`;

@@ -9,34 +9,41 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
   >
     <span
       className="status-pill badge badge-pill badge-primary"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-    >
-      <span
-        className="dot"
-        style={
-          Object {
-            "backgroundColor": "grey",
-          }
+      style={
+        Object {
+          "backgroundColor": "grey",
         }
-      />
+      }
+    >
       <div
         className="text"
       >
-        Status: loading
+        Loading
       </div>
+      <i
+        className="far fa-question-circle"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
     </span>
     <button
-      className="float-right loading btn btn-primary btn-lg"
+      className="float-right loading disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
     >
-      Deploy (0 updates)
+      <div
+        className="textLayer"
+      >
+        Publish
+      </div>
     </button>
   </div>
+  <div
+    className="toastContainer"
+  />
 </div>
 `;
 
@@ -49,34 +56,41 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
   >
     <span
       className="status-pill badge badge-pill badge-primary"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-    >
-      <span
-        className="dot"
-        style={
-          Object {
-            "backgroundColor": "#1abb64",
-          }
+      style={
+        Object {
+          "backgroundColor": "#1abb64",
         }
-      />
+      }
+    >
       <div
         className="text"
       >
-        Status: Pending changes
+        Publishing
       </div>
+      <i
+        className="far fa-question-circle"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
     </span>
     <button
-      className="float-right loading btn btn-primary btn-lg"
-      disabled={false}
+      className="float-right loading disabledBtn btn btn-primary btn-lg"
+      disabled={true}
       onClick={[Function]}
       type="button"
     >
-      Deploy (3 updates)
+      <div
+        className="textLayer"
+      >
+        Publish
+      </div>
     </button>
   </div>
+  <div
+    className="toastContainer"
+  />
 </div>
 `;
 
@@ -89,34 +103,41 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
   >
     <span
       className="status-pill badge badge-pill badge-primary"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-    >
-      <span
-        className="dot"
-        style={
-          Object {
-            "backgroundColor": "#1abb64",
-          }
+      style={
+        Object {
+          "backgroundColor": "#1abb64",
         }
-      />
+      }
+    >
       <div
         className="text"
       >
-        Status: Pending changes
+        Publishing
       </div>
+      <i
+        className="far fa-question-circle"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
     </span>
     <button
-      className="float-right loading btn btn-primary btn-lg"
-      disabled={false}
+      className="float-right loading disabledBtn btn btn-primary btn-lg"
+      disabled={true}
       onClick={[Function]}
       type="button"
     >
-      Deploy (3 updates)
+      <div
+        className="textLayer"
+      >
+        Publish
+      </div>
     </button>
   </div>
+  <div
+    className="toastContainer"
+  />
 </div>
 `;
 
@@ -129,34 +150,41 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
   >
     <span
       className="status-pill badge badge-pill badge-primary"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-    >
-      <span
-        className="dot"
-        style={
-          Object {
-            "backgroundColor": "#ff9b04",
-          }
+      style={
+        Object {
+          "backgroundColor": "#ff9b04",
         }
-      />
+      }
+    >
       <div
         className="text"
       >
-        Status: deploying changes
+        Publishing
       </div>
+      <i
+        className="far fa-question-circle"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
     </span>
     <button
-      className="float-right loading btn btn-primary btn-lg"
+      className="float-right loading disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
     >
-      Deploy (0 updates)
+      <div
+        className="textLayer"
+      >
+        Publish
+      </div>
     </button>
   </div>
+  <div
+    className="toastContainer"
+  />
 </div>
 `;
 
@@ -169,34 +197,41 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
   >
     <span
       className="status-pill badge badge-pill badge-primary"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-    >
-      <span
-        className="dot"
-        style={
-          Object {
-            "backgroundColor": "#ff9b04",
-          }
+      style={
+        Object {
+          "backgroundColor": "#ff9b04",
         }
-      />
+      }
+    >
       <div
         className="text"
       >
-        Status: We're preparing your instance 
+        Publishing
       </div>
+      <i
+        className="far fa-question-circle"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
     </span>
     <button
-      className="float-right loading btn btn-primary btn-lg"
+      className="float-right loading disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
     >
-      Deploy (0 updates)
+      <div
+        className="textLayer"
+      >
+        Publish
+      </div>
     </button>
   </div>
+  <div
+    className="toastContainer"
+  />
 </div>
 `;
 
@@ -209,33 +244,40 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
   >
     <span
       className="status-pill badge badge-pill badge-primary"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-    >
-      <span
-        className="dot"
-        style={
-          Object {
-            "backgroundColor": "#1abb64",
-          }
+      style={
+        Object {
+          "backgroundColor": "#1abb64",
         }
-      />
+      }
+    >
       <div
         className="text"
       >
-        Status: Up to date
+        Up to date
       </div>
+      <i
+        className="far fa-question-circle"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
     </span>
     <button
-      className="float-right loading btn btn-primary btn-lg"
+      className="float-right loading disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
     >
-      Deploy (0 updates)
+      <div
+        className="textLayer"
+      >
+        Publish
+      </div>
     </button>
   </div>
+  <div
+    className="toastContainer"
+  />
 </div>
 `;
