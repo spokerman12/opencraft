@@ -21,7 +21,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
         Loading
       </div>
       <i
-        className="far fa-question-circle"
+        className="fas fa-question-circle fa-lg"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseOut={[Function]}
@@ -29,7 +29,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
       />
     </span>
     <button
-      className="float-right loading disabledBtn btn btn-primary btn-lg"
+      className="float-right disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
@@ -37,7 +37,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
       <div
         className="textLayer"
       >
-        Publish
+        Publish changes
       </div>
     </button>
   </div>
@@ -68,7 +68,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
         Publishing
       </div>
       <i
-        className="far fa-question-circle"
+        className="fas fa-question-circle fa-lg"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseOut={[Function]}
@@ -76,7 +76,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
       />
     </span>
     <button
-      className="float-right loading disabledBtn btn btn-primary btn-lg"
+      className="float-right disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
@@ -84,7 +84,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
       <div
         className="textLayer"
       >
-        Publish
+        Publish changes
       </div>
     </button>
   </div>
@@ -115,7 +115,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
         Publishing
       </div>
       <i
-        className="far fa-question-circle"
+        className="fas fa-question-circle fa-lg"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseOut={[Function]}
@@ -123,7 +123,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right loading disabledBtn btn btn-primary btn-lg"
+      className="float-right disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
@@ -131,7 +131,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       <div
         className="textLayer"
       >
-        Publish
+        Publish changes
       </div>
     </button>
   </div>
@@ -162,7 +162,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
         Publishing
       </div>
       <i
-        className="far fa-question-circle"
+        className="fas fa-question-circle fa-lg"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseOut={[Function]}
@@ -170,7 +170,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right loading disabledBtn btn btn-primary btn-lg"
+      className="float-right disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
@@ -178,7 +178,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       <div
         className="textLayer"
       >
-        Publish
+        Publish changes
       </div>
     </button>
   </div>
@@ -209,7 +209,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
         Publishing
       </div>
       <i
-        className="far fa-question-circle"
+        className="fas fa-question-circle fa-lg"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseOut={[Function]}
@@ -217,7 +217,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right loading disabledBtn btn btn-primary btn-lg"
+      className="float-right disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
@@ -225,7 +225,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       <div
         className="textLayer"
       >
-        Publish
+        Publish changes
       </div>
     </button>
   </div>
@@ -256,7 +256,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
         Up to date
       </div>
       <i
-        className="far fa-question-circle"
+        className="fas fa-question-circle fa-lg"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseOut={[Function]}
@@ -264,7 +264,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right loading disabledBtn btn btn-primary btn-lg"
+      className="float-right disabledBtn btn btn-primary btn-lg"
       disabled={true}
       onClick={[Function]}
       type="button"
@@ -272,7 +272,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       <div
         className="textLayer"
       >
-        Publish
+        Publish changes
       </div>
     </button>
   </div>

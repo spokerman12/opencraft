@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <button
-  className="float-right loading disabledBtn btn btn-primary btn-lg"
+  className="float-right disabledBtn btn btn-primary btn-lg"
   disabled={true}
   onClick={[Function]}
   type="button"
@@ -10,7 +10,7 @@ exports[`renders without crashing 1`] = `
   <div
     className="textLayer"
   >
-    Publish
+    Publish changes
   </div>
 </button>
 `;

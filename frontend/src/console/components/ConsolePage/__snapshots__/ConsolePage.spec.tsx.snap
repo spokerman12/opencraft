@@ -24,7 +24,7 @@ exports[`Console Page Correctly renders loading page 1`] = `
           Loading
         </div>
         <i
-          className="far fa-question-circle"
+          className="fas fa-question-circle fa-lg"
           onBlur={[Function]}
           onFocus={[Function]}
           onMouseOut={[Function]}
@@ -32,7 +32,7 @@ exports[`Console Page Correctly renders loading page 1`] = `
         />
       </span>
       <button
-        className="float-right loading disabledBtn btn btn-primary btn-lg"
+        className="float-right disabledBtn btn btn-primary btn-lg"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -40,7 +40,7 @@ exports[`Console Page Correctly renders loading page 1`] = `
         <div
           className="textLayer"
         >
-          Publish
+          Publish changes
         </div>
       </button>
     </div>
@@ -301,7 +301,7 @@ exports[`Console Page Correctly renders page with data 1`] = `
           Publishing
         </div>
         <i
-          className="far fa-question-circle"
+          className="fas fa-question-circle fa-lg"
           onBlur={[Function]}
           onFocus={[Function]}
           onMouseOut={[Function]}
@@ -309,7 +309,7 @@ exports[`Console Page Correctly renders page with data 1`] = `
         />
       </span>
       <button
-        className="float-right loading disabledBtn btn btn-primary btn-lg"
+        className="float-right disabledBtn btn btn-primary btn-lg"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -317,7 +317,7 @@ exports[`Console Page Correctly renders page with data 1`] = `
         <div
           className="textLayer"
         >
-          Publish
+          Publish changes
         </div>
       </button>
     </div>

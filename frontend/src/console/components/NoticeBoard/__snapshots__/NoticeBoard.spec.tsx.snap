@@ -24,7 +24,7 @@ exports[`NoticeBoard tests Renders all notification types without crashing 1`] =
           Publishing
         </div>
         <i
-          className="far fa-question-circle"
+          className="fas fa-question-circle fa-lg"
           onBlur={[Function]}
           onFocus={[Function]}
           onMouseOut={[Function]}
@@ -32,7 +32,7 @@ exports[`NoticeBoard tests Renders all notification types without crashing 1`] =
         />
       </span>
       <button
-        className="float-right loading disabledBtn btn btn-primary btn-lg"
+        className="float-right disabledBtn btn btn-primary btn-lg"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -40,7 +40,7 @@ exports[`NoticeBoard tests Renders all notification types without crashing 1`] =
         <div
           className="textLayer"
         >
-          Publish
+          Publish changes
         </div>
       </button>
     </div>

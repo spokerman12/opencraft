@@ -15,7 +15,7 @@ exports[`renders without crashing 1`] = `
     Loading
   </div>
   <i
-    className="far fa-question-circle"
+    className="fas fa-question-circle fa-lg"
     onBlur={[Function]}
     onFocus={[Function]}
     onMouseOut={[Function]}

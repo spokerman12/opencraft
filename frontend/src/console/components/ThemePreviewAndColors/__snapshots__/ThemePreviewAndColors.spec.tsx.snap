@@ -1785,7 +1785,7 @@ exports[`Theme preview and colors page renders without crashing 1`] = `
           Loading
         </div>
         <i
-          className="far fa-question-circle"
+          className="fas fa-question-circle fa-lg"
           onBlur={[Function]}
           onFocus={[Function]}
           onMouseOut={[Function]}
@@ -1793,7 +1793,7 @@ exports[`Theme preview and colors page renders without crashing 1`] = `
         />
       </span>
       <button
-        className="float-right loading disabledBtn btn btn-primary btn-lg"
+        className="float-right disabledBtn btn btn-primary btn-lg"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -1801,7 +1801,7 @@ exports[`Theme preview and colors page renders without crashing 1`] = `
         <div
           className="textLayer"
         >
-          Publish
+          Publish changes
         </div>
       </button>
     </div>

@@ -53,7 +53,7 @@ export const CustomStatusPill: React.FC<Props> = ({
           </Nav>
         )}
       <OverlayTrigger placement="right" overlay={tooltip}>
-        <i className="fas fa-question-circle fa-lg"/>
+        <i className="fas fa-question-circle fa-lg" />
       </OverlayTrigger>
     </Badge>
   );
