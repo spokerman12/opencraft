@@ -29,7 +29,7 @@ export function buildStatusContext(
 
   switch (redeploymentStatus) {
     case DeploymentStatus.Healthy:
-      result.pillColor = '#1abb64';
+      result.pillColor = '#00a556';
       result.deploymentStatusText = 'updatedDeployment';
       result.tooltipText = 'updatedDeploymentTooltip';
       break;
@@ -56,7 +56,7 @@ export function buildStatusContext(
       result.tooltipText = 'preparingInstanceTooltip';
       break;
     case DeploymentStatus.ChangesPending:
-      result.pillColor = '#1abb64';
+      result.pillColor = '#00a556';
       result.deploymentStatusText = 'pendingChanges';
       result.tooltipText = 'pendingChangesTooltip';
       break;
