@@ -194,15 +194,42 @@ const NoticeBoardComponent: React.FC<Props> = (props: Props) => {
     </p>
   );
 
+  const staticExplanation = (
+    <div className="explanation-container">
+      <p>
+        <WrappedMessage id="explanation" messages={messages} />
+      </p>
+      <p>
+        {/* TODO: Point the link to a specific blog post, once it's created. */}
+        <WrappedMessage
+          id="blogpost_text"
+          messages={messages}
+          values={{
+            link: (text: string) => (
+              <a
+                href="https://opencraft.com/blog"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {text}
+              </a>
+            )
+          }}
+        />
+      </p>
+    </div>
+  );
+
   return (
     <ConsolePage showSidebar={false} contentLoading={props.loading}>
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col md={8}>
           <div className="notice-board-heading">
             <p>
               <WrappedMessage id="noticeBoard" messages={messages} />
             </p>
           </div>
+          {staticExplanation}
           {pageContent}
         </Col>
       </Row>
