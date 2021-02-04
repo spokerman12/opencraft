@@ -1,6 +1,6 @@
 const messages = {
   deploy: {
-    defaultMessage: 'Publish',
+    defaultMessage: 'Publish changes',
     description: 'Deployment/Publish button text.'
   },
   notificationText: {

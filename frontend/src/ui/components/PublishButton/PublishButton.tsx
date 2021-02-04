@@ -38,8 +38,8 @@ export const PublishButton: React.FC<Props> = ({
     <Button
       className={
         deploymentDisabled
-          ? 'float-right loading disabledBtn'
-          : 'float-right loading'
+          ? 'float-right disabledBtn'
+          : 'float-right enabledBtn'
       }
       variant="primary"
       size="lg"
