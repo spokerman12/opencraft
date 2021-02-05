@@ -43,7 +43,7 @@ describe('CustomStatusPill renders correctly when ', () => {
           performDeployment={() => {}}
         />
       ).toJSON();
-      expect(getTestProps(tree)).toEqual(["Up to date","#1abb64"]);
+      expect(getTestProps(tree)).toEqual(["Up to date","#00a556"]);
     });
 
     it('Status is Provisioning', () => {
@@ -91,6 +91,6 @@ describe('CustomStatusPill renders correctly when ', () => {
           performDeployment={() => {}}
         />
       ).toJSON();
-      expect(getTestProps(tree)).toEqual(["Publishing",'#1abb64']);
+      expect(getTestProps(tree)).toEqual(["Publishing",'#00a556']);
     });
 });

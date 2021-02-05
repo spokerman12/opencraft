@@ -58,7 +58,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
       className="status-pill badge badge-pill badge-primary"
       style={
         Object {
-          "backgroundColor": "#1abb64",
+          "backgroundColor": "#00a556",
         }
       }
     >
@@ -105,7 +105,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       className="status-pill badge badge-pill badge-primary"
       style={
         Object {
-          "backgroundColor": "#1abb64",
+          "backgroundColor": "#00a556",
         }
       }
     >
@@ -246,7 +246,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       className="status-pill badge badge-pill badge-primary"
       style={
         Object {
-          "backgroundColor": "#1abb64",
+          "backgroundColor": "#00a556",
         }
       }
     >
