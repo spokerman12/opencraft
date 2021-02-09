@@ -100,7 +100,8 @@ export const RedeploymentToolbar: React.FC<Props> = ({
         <PublishButton
           onClickWrapper={performDeploymentHandler}
           loading={loading}
-          deployment={deployment}
+          undeployedChanges={undeployedChanges}
+          deploymentDisabled={deploymentDisabled}
         />
       </div>
 

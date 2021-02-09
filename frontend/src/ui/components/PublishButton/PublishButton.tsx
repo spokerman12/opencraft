@@ -1,45 +1,30 @@
 import * as React from 'react';
 import { WrappedMessage } from 'utils/intl';
 import { Button } from 'react-bootstrap';
-import { OpenEdXInstanceDeploymentStatusStatusEnum as DeploymentStatus } from 'ocim-client';
-import { DeploymentInfoModel } from 'console/models';
-
 import messages from './displayMessages';
 import './styles.scss';
 
 interface Props {
-  deployment?: DeploymentInfoModel;
-  loading: boolean;
-  onClickWrapper: Function;
+  deploymentDisabled: boolean;
+  undeployedChanges: number | null;
+  onClickWrapper?: Function;
 }
 
 export const PublishButton: React.FC<Props> = ({
-  deployment,
-  loading,
-  onClickWrapper
+  deploymentDisabled,
+  undeployedChanges,
+  onClickWrapper,
 }: Props) => {
-  let deploymentDisabled: boolean = true;
-  let undeployedChanges: number = 0;
-  let deploymentStatus: DeploymentStatus | null = null;
-  if (deployment) {
-    deploymentStatus = deployment.status;
-    undeployedChanges = deployment.undeployedChanges.length;
+  const notificationNumber = undeployedChanges <= 9
+    ? undeployedChanges
+    : '9+';
 
-    deploymentDisabled =
-      loading ||
-      !undeployedChanges ||
-      deploymentStatus === DeploymentStatus.Preparing;
-  }
-
-  // Notifications red blip
-  const notificationNumber = undeployedChanges <= 9 ? undeployedChanges : '9+';
-
-  return (
-    <Button
+    return (
+      <Button
       className={
         deploymentDisabled
-          ? 'float-right disabledBtn'
-          : 'float-right enabledBtn'
+        ? 'float-right disabledBtn'
+        : 'float-right enabledBtn'
       }
       variant="primary"
       size="lg"
@@ -47,7 +32,7 @@ export const PublishButton: React.FC<Props> = ({
       onClick={() => {
         onClickWrapper();
       }}
-    >
+      >
       {undeployedChanges !== 0 && (
         <div className="notificationLayer">
           <p>
@@ -55,7 +40,7 @@ export const PublishButton: React.FC<Props> = ({
               id="notificationText"
               messages={messages}
               values={{ notificationNumber }}
-            />
+              />
           </p>
         </div>
       )}
@@ -64,4 +49,4 @@ export const PublishButton: React.FC<Props> = ({
       </div>
     </Button>
   );
-};
+}

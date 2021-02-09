@@ -20,9 +20,8 @@ function getTestProps(publishBtn: Object): Array<String> {
   return [disabled, notificationCount]
 }
 
-const singleDigitChanges = Array.from('x'.repeat(5))
-console.log(singleDigitChanges)
-const doubleDigitChanges = Array.from('x'.repeat(15))
+const singleDigitChanges = Array.from('x'.repeat(5)).length
+const doubleDigitChanges = Array.from('x'.repeat(15)).length
 
 it('renders without crashing', () => {
     const tree = setupComponentForTesting(<PublishButton />).toJSON();
@@ -30,29 +29,21 @@ it('renders without crashing', () => {
 });
 
 describe("PublishButton renders as disabled when", function() {
-  it('loading, pending changes', () => {
+  it('pending changes', () => {
       const publishBtn = setupComponentForTesting(
       <PublishButton
-        deployment={{
-            status: OpenEdXInstanceDeploymentStatusStatusEnum.Preparing,
-            undeployedChanges: singleDigitChanges,
-            type: OpenEdXInstanceDeploymentStatusDeploymentTypeEnum.Admin,
-        }}
-        loading={true}
+        undeployedChanges={singleDigitChanges}
+        deploymentDisabled={true}
       />
       ).toJSON();
       expect(getTestProps(publishBtn)).toEqual([true, "5"])
   });
 
-  it('not loading, no pending changes', () => {
+  it('no pending changes', () => {
     const publishBtn = setupComponentForTesting(
     <PublishButton
-      deployment={{
-          status: OpenEdXInstanceDeploymentStatusStatusEnum.Preparing,
-          undeployedChanges: [],
-          type: OpenEdXInstanceDeploymentStatusDeploymentTypeEnum.Admin,
-      }}
-      loading={false}
+    undeployedChanges={[].length}
+    deploymentDisabled={true}
     />
     ).toJSON();
     expect(getTestProps(publishBtn)).toEqual([true, null])
@@ -60,28 +51,20 @@ describe("PublishButton renders as disabled when", function() {
 });
 
 describe("PublishButton renders as enabled when", function() {
-  it('not loading, single-digit pending changes', () => {
+  it('single-digit pending changes', () => {
     const publishBtn = setupComponentForTesting(
     <PublishButton
-      deployment={{
-          status: OpenEdXInstanceDeploymentStatusStatusEnum.Healthy,
-          undeployedChanges: singleDigitChanges,
-          type: OpenEdXInstanceDeploymentStatusDeploymentTypeEnum.Admin,
-      }}
-      loading={false}
+      undeployedChanges={singleDigitChanges}
+      deploymentDisabled={false}
     />
     ).toJSON();
     expect(getTestProps(publishBtn)).toEqual([false, "5"])
   });
-  it('not loading, double-digit pending changes', () => {
+  it('double-digit pending changes', () => {
     const publishBtn = setupComponentForTesting(
     <PublishButton
-      deployment={{
-          status: OpenEdXInstanceDeploymentStatusStatusEnum.Healthy,
-          undeployedChanges: doubleDigitChanges,
-          type: OpenEdXInstanceDeploymentStatusDeploymentTypeEnum.Admin,
-      }}
-      loading={false}
+      undeployedChanges={doubleDigitChanges}
+      deploymentDisabled={false}
     />
     ).toJSON();
     expect(getTestProps(publishBtn)).toEqual([false, "9+"])
