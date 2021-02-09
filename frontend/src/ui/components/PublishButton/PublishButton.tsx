@@ -13,18 +13,16 @@ interface Props {
 export const PublishButton: React.FC<Props> = ({
   deploymentDisabled,
   undeployedChanges,
-  onClickWrapper,
+  onClickWrapper
 }: Props) => {
-  const notificationNumber = undeployedChanges <= 9
-    ? undeployedChanges
-    : '9+';
+  const notificationNumber = undeployedChanges <= 9 ? undeployedChanges : '9+';
 
-    return (
-      <Button
+  return (
+    <Button
       className={
         deploymentDisabled
-        ? 'float-right disabledBtn'
-        : 'float-right enabledBtn'
+          ? 'float-right disabledBtn'
+          : 'float-right enabledBtn'
       }
       variant="primary"
       size="lg"
@@ -32,7 +30,7 @@ export const PublishButton: React.FC<Props> = ({
       onClick={() => {
         onClickWrapper();
       }}
-      >
+    >
       {undeployedChanges !== 0 && (
         <div className="notificationLayer">
           <p>
@@ -40,7 +38,7 @@ export const PublishButton: React.FC<Props> = ({
               id="notificationText"
               messages={messages}
               values={{ notificationNumber }}
-              />
+            />
           </p>
         </div>
       )}
@@ -49,4 +47,4 @@ export const PublishButton: React.FC<Props> = ({
       </div>
     </Button>
   );
-}
+};
