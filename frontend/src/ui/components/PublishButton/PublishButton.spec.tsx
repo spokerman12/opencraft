@@ -1,10 +1,5 @@
 import React from 'react';
 import { setupComponentForTesting } from "utils/testing";
-import { RedeploymentToolbar } from 'console/components/RedeploymentToolbar';
-import {
-    OpenEdXInstanceDeploymentStatusDeploymentTypeEnum,
-    OpenEdXInstanceDeploymentStatusStatusEnum
-} from 'ocim-client';
 import { PublishButton } from "./PublishButton"
 /**
  * Returns the PublishButton's test props.
