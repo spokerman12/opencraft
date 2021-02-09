@@ -1806,7 +1806,7 @@ exports[`Theme preview and colors page renders without crashing 1`] = `
       </button>
     </div>
     <div
-      className="toastContainer"
+      className="toast-container"
     />
   </div>
   <div

@@ -42,7 +42,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
     </button>
   </div>
   <div
-    className="toastContainer"
+    className="toast-container"
   />
 </div>
 `;
@@ -96,7 +96,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
     </button>
   </div>
   <div
-    className="toastContainer"
+    className="toast-container"
   />
 </div>
 `;
@@ -150,7 +150,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
     </button>
   </div>
   <div
-    className="toastContainer"
+    className="toast-container"
   />
 </div>
 `;
@@ -197,7 +197,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
     </button>
   </div>
   <div
-    className="toastContainer"
+    className="toast-container"
   />
 </div>
 `;
@@ -244,7 +244,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
     </button>
   </div>
   <div
-    className="toastContainer"
+    className="toast-container"
   />
 </div>
 `;
@@ -291,7 +291,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
     </button>
   </div>
   <div
-    className="toastContainer"
+    className="toast-container"
   />
 </div>
 `;

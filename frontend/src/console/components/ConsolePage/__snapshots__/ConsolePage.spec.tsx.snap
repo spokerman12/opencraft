@@ -45,7 +45,7 @@ exports[`Console Page Correctly renders loading page 1`] = `
       </button>
     </div>
     <div
-      className="toastContainer"
+      className="toast-container"
     />
   </div>
   <div
@@ -322,7 +322,7 @@ exports[`Console Page Correctly renders page with data 1`] = `
       </button>
     </div>
     <div
-      className="toastContainer"
+      className="toast-container"
     />
   </div>
   <div
