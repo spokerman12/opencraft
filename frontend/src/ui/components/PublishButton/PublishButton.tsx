@@ -6,8 +6,8 @@ import './styles.scss';
 
 interface Props {
   deploymentDisabled: boolean;
-  undeployedChanges: number | null;
-  onClickWrapper?: Function;
+  undeployedChanges: number;
+  onClickWrapper: Function;
 }
 
 export const PublishButton: React.FC<Props> = ({

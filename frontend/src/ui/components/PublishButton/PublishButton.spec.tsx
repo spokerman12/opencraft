@@ -29,6 +29,7 @@ describe("PublishButton renders as disabled when", function() {
       <PublishButton
         undeployedChanges={singleDigitChanges}
         deploymentDisabled={true}
+        onClickWrapper={function() { return false; }}
       />
       ).toJSON();
       expect(getTestProps(publishBtn)).toEqual([true, "5"])
@@ -39,6 +40,7 @@ describe("PublishButton renders as disabled when", function() {
     <PublishButton
     undeployedChanges={[].length}
     deploymentDisabled={true}
+    onClickWrapper={function() { return false; }}
     />
     ).toJSON();
     expect(getTestProps(publishBtn)).toEqual([true, null])
@@ -51,6 +53,7 @@ describe("PublishButton renders as enabled when", function() {
     <PublishButton
       undeployedChanges={singleDigitChanges}
       deploymentDisabled={false}
+      onClickWrapper={function() { return false; }}
     />
     ).toJSON();
     expect(getTestProps(publishBtn)).toEqual([false, "5"])
@@ -60,6 +63,7 @@ describe("PublishButton renders as enabled when", function() {
     <PublishButton
       undeployedChanges={doubleDigitChanges}
       deploymentDisabled={false}
+      onClickWrapper={function() { return false; }}
     />
     ).toJSON();
     expect(getTestProps(publishBtn)).toEqual([false, "9+"])
