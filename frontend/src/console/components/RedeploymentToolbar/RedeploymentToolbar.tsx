@@ -146,12 +146,12 @@ export const RedeploymentToolbar: React.FC<Props> = ({
           </Button>
         </Modal.Footer>
       </Modal>
-      <div className="toastContainer">
+      <div className="toast-container">
         <Toast
           className="deployToast"
           show={toastIsVisible}
           onClose={toggleToast}
-          delay={10000}
+          delay={4000}
           autohide
         >
           <Toast.Header
