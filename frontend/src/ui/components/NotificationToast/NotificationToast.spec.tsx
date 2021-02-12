@@ -17,7 +17,7 @@ it('renders without crashing', () => {
     }
 
     const tree = setupComponentForTesting(<NotificationToast
-        show={true}
+        show={false}
         onClose={()=>{}}
         delay={4000}
         autohide
