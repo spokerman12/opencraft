@@ -42,7 +42,7 @@ export const PublishButton: React.FC<Props> = ({
           </p>
         </div>
       )}
-      <div className="textLayer">
+      <div className="buttonTextLayer">
         <WrappedMessage id="deploy" messages={messages} />
       </div>
     </Button>
