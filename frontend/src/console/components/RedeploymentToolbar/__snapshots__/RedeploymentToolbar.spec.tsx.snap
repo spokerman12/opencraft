@@ -29,13 +29,13 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
       />
     </span>
     <button
-      className="float-right disabledBtn btn btn-primary btn-lg"
-      disabled={true}
+      className="float-right enabledBtn btn btn-primary btn-lg"
+      disabled={false}
       onClick={[Function]}
       type="button"
     >
       <div
-        className="textLayer"
+        className="buttonTextLayer"
       >
         Publish changes
       </div>
@@ -89,7 +89,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
         </p>
       </div>
       <div
-        className="textLayer"
+        className="buttonTextLayer"
       >
         Publish changes
       </div>
@@ -143,7 +143,7 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
         </p>
       </div>
       <div
-        className="textLayer"
+        className="buttonTextLayer"
       >
         Publish changes
       </div>
@@ -184,13 +184,13 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right disabledBtn btn btn-primary btn-lg"
-      disabled={true}
+      className="float-right enabledBtn btn btn-primary btn-lg"
+      disabled={false}
       onClick={[Function]}
       type="button"
     >
       <div
-        className="textLayer"
+        className="buttonTextLayer"
       >
         Publish changes
       </div>
@@ -231,13 +231,13 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right disabledBtn btn btn-primary btn-lg"
-      disabled={true}
+      className="float-right enabledBtn btn btn-primary btn-lg"
+      disabled={false}
       onClick={[Function]}
       type="button"
     >
       <div
-        className="textLayer"
+        className="buttonTextLayer"
       >
         Publish changes
       </div>
@@ -278,13 +278,13 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right disabledBtn btn btn-primary btn-lg"
-      disabled={true}
+      className="float-right enabledBtn btn btn-primary btn-lg"
+      disabled={false}
       onClick={[Function]}
       type="button"
     >
       <div
-        className="textLayer"
+        className="buttonTextLayer"
       >
         Publish changes
       </div>

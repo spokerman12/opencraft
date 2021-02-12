@@ -3,39 +3,5 @@
 exports[`renders without crashing 1`] = `
 <div
   className="toast-container"
->
-  <div
-    aria-atomic="true"
-    aria-live="assertive"
-    className="fade toast deployToast show"
-    role="alert"
-  >
-    <div
-      className="toast-header toastHeader"
-    >
-      <button
-        className="close ml-2 mb-1"
-        data-dismiss="toast"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          aria-hidden="true"
-        >
-          ×
-        </span>
-        <span
-          className="sr-only"
-        >
-          Close notification.
-        </span>
-      </button>
-    </div>
-    <div
-      className="toast-body"
-    >
-      Your updates are being published to your live site (LMS) This can take 2 - 3 hours.
-    </div>
-  </div>
-</div>
+/>
 `;
