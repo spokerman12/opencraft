@@ -18,13 +18,13 @@ const messages = {
     defaultMessage: 'Cancel redeployment',
     description: ''
   },
-  toastMessage: {
+  notificationBody: {
     defaultMessage:
       'Your updates are being published to your live site (LMS) ' +
       'This can take 2 - 3 hours.',
     description: 'Text for the toast notification on clicking Publish'
   },
-  closeToast: {
+  notificationHelp: {
     defaultMessage: 'Close notification.',
     description: 'Helper text for closing the toast notification'
   }

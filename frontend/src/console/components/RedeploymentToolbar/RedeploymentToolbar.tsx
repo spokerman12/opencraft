@@ -1,8 +1,12 @@
 import * as React from 'react';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { WrappedMessage } from 'utils/intl';
-import { Button, Modal, Toast } from 'react-bootstrap';
-import { CustomStatusPill, PublishButton } from 'ui/components';
+import { Button, Modal } from 'react-bootstrap';
+import {
+  CustomStatusPill,
+  NotificationToast,
+  PublishButton
+} from 'ui/components';
 import { DeploymentInfoModel } from 'console/models';
 import {
   OpenEdXInstanceDeploymentStatusStatusEnum as DeploymentStatus,
@@ -30,9 +34,9 @@ export const RedeploymentToolbar: React.FC<Props> = ({
   const handleShowModal = () => setShow(true);
   const { trackEvent } = useMatomo();
 
-  // Deployment notification
-  const [toastIsVisible, showToast] = React.useState(false);
-  const toggleToast = () => showToast(!toastIsVisible);
+  // Deployment notification handler
+  const [notificationIsVisible, showNotification] = React.useState(false);
+  const toggleNotification = () => showNotification(!notificationIsVisible);
 
   let deploymentDisabled: boolean = true;
   let cancelDeploymentDisabled: boolean = true;
@@ -50,7 +54,7 @@ export const RedeploymentToolbar: React.FC<Props> = ({
       performDeployment();
 
       // Show the deployment notification
-      toggleToast();
+      toggleNotification();
     }
   };
 
@@ -98,9 +102,9 @@ export const RedeploymentToolbar: React.FC<Props> = ({
           cancelRedeployment={cancelDeploymentHandler}
         />
         <PublishButton
-          onClickWrapper={performDeploymentHandler}
+          deploymentHandler={performDeploymentHandler}
           undeployedChanges={undeployedChanges}
-          deploymentDisabled={deploymentDisabled}
+          deploymentDisabled={false && deploymentDisabled}
         />
       </div>
 
@@ -146,23 +150,15 @@ export const RedeploymentToolbar: React.FC<Props> = ({
           </Button>
         </Modal.Footer>
       </Modal>
-      <div className="toast-container">
-        <Toast
-          className="deployToast"
-          show={toastIsVisible}
-          onClose={toggleToast}
-          delay={4000}
-          autohide
-        >
-          <Toast.Header
-            className="toastHeader"
-            closeLabel={messages.closeToast.defaultMessage}
-          />
-          <Toast.Body>
-            <WrappedMessage id="toastMessage" messages={messages} />
-          </Toast.Body>
-        </Toast>
-      </div>
+      <NotificationToast
+        show={notificationIsVisible}
+        onClose={toggleNotification}
+        delay={4000}
+        autohide
+        bodyMessageId="notificationBody"
+        closeMessage={messages.notificationHelp.defaultMessage}
+        messages={messages}
+      />
     </div>
   );
 };

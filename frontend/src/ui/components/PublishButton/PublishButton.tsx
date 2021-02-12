@@ -7,13 +7,13 @@ import './styles.scss';
 interface Props {
   deploymentDisabled: boolean;
   undeployedChanges: number;
-  onClickWrapper: Function;
+  deploymentHandler: Function;
 }
 
 export const PublishButton: React.FC<Props> = ({
   deploymentDisabled,
   undeployedChanges,
-  onClickWrapper
+  deploymentHandler
 }: Props) => {
   const notificationNumber = undeployedChanges <= 9 ? undeployedChanges : '9+';
 
@@ -28,7 +28,7 @@ export const PublishButton: React.FC<Props> = ({
       size="lg"
       disabled={deploymentDisabled}
       onClick={() => {
-        onClickWrapper();
+        deploymentHandler();
       }}
     >
       {undeployedChanges !== 0 && (
