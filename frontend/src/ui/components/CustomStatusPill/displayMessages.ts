@@ -37,7 +37,7 @@ const messages = {
   },
   preparingInstanceTooltip: {
     defaultMessage:
-      'Your updates are publishing to your live sire (LMS). This can take 2-3 hours',
+      'Your updates are publishing to your live site (LMS). This can take 2-3 hours',
     description: 'Redeployment status tooltip text.'
   },
   pendingChanges: {
