@@ -1040,8 +1040,8 @@ exports[`Hero customization page renders without crashing 1`] = `
         />
       </span>
       <button
-        className="float-right enabledBtn btn btn-primary btn-lg"
-        disabled={false}
+        className="float-right disabledBtn btn btn-primary btn-lg"
+        disabled={true}
         onClick={[Function]}
         type="button"
       >

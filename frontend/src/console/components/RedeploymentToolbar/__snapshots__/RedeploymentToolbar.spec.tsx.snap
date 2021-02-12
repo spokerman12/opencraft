@@ -29,8 +29,8 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when d
       />
     </span>
     <button
-      className="float-right enabledBtn btn btn-primary btn-lg"
-      disabled={false}
+      className="float-right disabledBtn btn btn-primary btn-lg"
+      disabled={true}
       onClick={[Function]}
       type="button"
     >
@@ -184,8 +184,8 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right enabledBtn btn btn-primary btn-lg"
-      disabled={false}
+      className="float-right disabledBtn btn btn-primary btn-lg"
+      disabled={true}
       onClick={[Function]}
       type="button"
     >
@@ -231,8 +231,8 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right enabledBtn btn btn-primary btn-lg"
-      disabled={false}
+      className="float-right disabledBtn btn btn-primary btn-lg"
+      disabled={true}
       onClick={[Function]}
       type="button"
     >
@@ -278,8 +278,8 @@ exports[`RedeploymentToolbar Component Correctly renders redeployment bar when i
       />
     </span>
     <button
-      className="float-right enabledBtn btn btn-primary btn-lg"
-      disabled={false}
+      className="float-right disabledBtn btn btn-primary btn-lg"
+      disabled={true}
       onClick={[Function]}
       type="button"
     >

@@ -32,8 +32,8 @@ exports[`Console Page Correctly renders loading page 1`] = `
         />
       </span>
       <button
-        className="float-right enabledBtn btn btn-primary btn-lg"
-        disabled={false}
+        className="float-right disabledBtn btn btn-primary btn-lg"
+        disabled={true}
         onClick={[Function]}
         type="button"
       >
@@ -309,8 +309,8 @@ exports[`Console Page Correctly renders page with data 1`] = `
         />
       </span>
       <button
-        className="float-right enabledBtn btn btn-primary btn-lg"
-        disabled={false}
+        className="float-right disabledBtn btn btn-primary btn-lg"
+        disabled={true}
         onClick={[Function]}
         type="button"
       >
