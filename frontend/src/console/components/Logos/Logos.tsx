@@ -6,7 +6,7 @@ import {
 } from 'console/components';
 import { Row, Col } from 'react-bootstrap';
 import { InstancesModel } from 'console/models';
-import { CollapseEditArea, ImageUploadField } from 'ui/components';
+import { ImageUploadField } from 'ui/components';
 import { connect } from 'react-redux';
 import { RootState } from 'global/state';
 import { WrappedMessage } from 'utils/intl';
@@ -39,15 +39,10 @@ export class LogosComponent extends React.PureComponent<Props, State> {
       <ConsolePage contentLoading={this.props.loading}>
         <div className="custom-logo-pages">
           <ConsolePageCustomizationContainer>
+            <h2>
+              <WrappedMessage messages={messages} id="logos" />
+            </h2>
             <Row>
-              <Col md={9}>
-                <h2>
-                  <WrappedMessage messages={messages} id="logo" />
-                </h2>
-                <p>
-                  <WrappedMessage messages={messages} id="logoDescription" />
-                </p>
-              </Col>
               <Col md={3} className="image-container">
                 <div>
                   {instance.data && instance.data.logo && (
@@ -56,10 +51,9 @@ export class LogosComponent extends React.PureComponent<Props, State> {
                 </div>
               </Col>
             </Row>
-            <CollapseEditArea initialExpanded>
               <ImageUploadField
                 customUploadMessage={
-                  <WrappedMessage messages={messages} id="uploadLogo" />
+                  <WrappedMessage messages={messages} id="siteLogo" />
                 }
                 updateImage={(image: File) => {
                   this.updateImage('logo', image);
@@ -70,19 +64,7 @@ export class LogosComponent extends React.PureComponent<Props, State> {
                   this.props.clearErrorMessage('logo');
                 }}
               />
-            </CollapseEditArea>
-          </ConsolePageCustomizationContainer>
-
-          <ConsolePageCustomizationContainer>
             <Row>
-              <Col md={9}>
-                <h2>
-                  <WrappedMessage messages={messages} id="favicon" />
-                </h2>
-                <p>
-                  <WrappedMessage messages={messages} id="faviconDescription" />
-                </p>
-              </Col>
               <Col md={3} className="image-container">
                 <div>
                   {instance.data && instance.data.favicon && (
@@ -91,10 +73,9 @@ export class LogosComponent extends React.PureComponent<Props, State> {
                 </div>
               </Col>
             </Row>
-            <CollapseEditArea>
               <ImageUploadField
                 customUploadMessage={
-                  <WrappedMessage messages={messages} id="uploadFavicon" />
+                  <WrappedMessage messages={messages} id="favicon" />
                 }
                 updateImage={(image: File) => {
                   this.updateImage('favicon', image);
@@ -104,7 +85,6 @@ export class LogosComponent extends React.PureComponent<Props, State> {
                   this.props.clearErrorMessage('favicon');
                 }}
               />
-            </CollapseEditArea>
           </ConsolePageCustomizationContainer>
         </div>
       </ConsolePage>

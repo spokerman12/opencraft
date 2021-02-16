@@ -1,7 +1,11 @@
 const messages = {
-  logo: {
-    defaultMessage: 'Logo',
-    description: ''
+  logos: {
+    defaultMessage: 'Logos',
+    description: 'Page title'
+  },
+  siteLogo: {
+    defaultMessage: 'Site logo',
+    description: 'Site Logo subtitle'
   },
   logoDescription: {
     defaultMessage:
@@ -11,21 +15,21 @@ const messages = {
   },
   uploadLogo: {
     defaultMessage: 'Upload Logo',
-    description: ''
+    description: 'Upload logo help text'
   },
   favicon: {
     defaultMessage: 'Favicon',
-    description: ''
+    description: 'Favicon subtitle'
   },
   faviconDescription: {
     defaultMessage:
       'This is the icon that will be displayed in the browser tab. ' +
       "If unset, OpenCraft's logo will be used.",
-    description: ''
+    description: 'Favicon explanation'
   },
   uploadFavicon: {
     defaultMessage: 'Upload Favicon',
-    description: ''
+    description: 'Upload favicon help text'
   }
 };
 
