@@ -61,6 +61,7 @@ export const RedeploymentToolbar: React.FC<Props> = ({
   if (deployment) {
     deploymentStatus = deployment.status;
     undeployedChanges = deployment.undeployedChanges.length;
+    console.log(undeployedChanges, deployment.undeployedChanges);
     deploymentType = deployment.deploymentType;
     /**
      * The user can't trigger a deployment when:
