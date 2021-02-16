@@ -47,6 +47,11 @@ export const ImageUploadField: React.FC<ImageUploadFieldProps> = (
         onClick={handleShow}
         disabled={props.loading}
       >
+        <img 
+          className='uploadIcon' 
+          src={require('../../../assets/uparrow.png')} 
+          alt="Upload icon"
+        />
         <WrappedMessage messages={messages} id="change" />
       </Button>
 

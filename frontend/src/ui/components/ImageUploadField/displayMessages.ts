@@ -4,7 +4,7 @@ const messages = {
     description: ''
   },
   change: {
-    defaultMessage: 'Change',
+    defaultMessage: 'Change file',
     description: ''
   },
   updateImage: {
