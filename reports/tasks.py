@@ -48,7 +48,7 @@ TRIAL_INSTANCES_REPORT_SCHEDULE_DAY_OF_WEEK = TRIAL_INSTANCES_REPORT_SCHEDULE[4]
 )
 def send_trial_instances_report(recipients=settings.TRIAL_INSTANCES_REPORT_RECIPIENTS):
     """
-    Generate and send a trial instance data report
+    Generate and send a new instance data report for the past month
 
     This task runs on the first of every month at 2AM
     """
@@ -56,16 +56,6 @@ def send_trial_instances_report(recipients=settings.TRIAL_INSTANCES_REPORT_RECIP
     if not recipients:
         logger.warning('No recipients listed for Trial Instances Report. It will not be generated.')
         return True
-
-    # Get instances with an active betatestapplication and
-    # whose InstanceReference has an active OpenEdXAppServer
-    instances = OpenEdXInstance.objects.exclude(
-        betatestapplication__isnull=True
-    ).filter(
-        ref_set__openedxappserver_set___is_active=True
-    )
-
-    domains = [instance.external_lms_domain or instance.internal_lms_domain for instance in instances]
 
     # Start with the beginning of this month
     beginning_of_this_month = datetime.utcnow().date().replace(day=1)
@@ -75,6 +65,20 @@ def send_trial_instances_report(recipients=settings.TRIAL_INSTANCES_REPORT_RECIP
     # Finally, replace the day with 1, to get the first day of last month
     end_of_last_month = (beginning_of_this_month - timedelta(days=1))
     beginning_of_last_month = end_of_last_month.replace(day=1)
+
+    # Get instances with an active betatestapplication and
+    # whose InstanceReference has an active OpenEdXAppServer
+    instances = OpenEdXInstance.objects.exclude(
+        betatestapplication__isnull=True
+    ).filter(
+        ref_set__openedxappserver_set___is_active=True
+    ).filter(
+        ref_set__created__range=[
+            beginning_of_last_month.strftime("%Y-%m-%d"),
+            end_of_last_month.strftime("%Y-%m-%d")
+    ])
+
+    domains = [instance.external_lms_domain or instance.internal_lms_domain for instance in instances]
 
     csv_filename = '/tmp/trial_instances_report.csv'
 
