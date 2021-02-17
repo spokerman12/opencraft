@@ -12,7 +12,7 @@ import {
   ThemePreviewAndColors,
   CustomPages
 } from 'console/components';
-import { Logos as newLogos } from 'newConsole/components'
+import { Logos as newLogos, LogosSideBar } from 'newConsole/components'
 import { PrivateRoute } from 'auth/components';
 import { ROUTES } from '../global/constants';
 
@@ -23,7 +23,7 @@ export const ConsoleRoutes = () => {
       <Route exact path={ROUTES.Console.HOME}>
         <Redirect to={ROUTES.Console.THEME_PREVIEW_AND_COLORS} />
       </Route>
-      <Route exact path={ROUTES.Console.NEWHOME}>
+      <Route exact path={ROUTES.Console.NEW_HOME}>
         <Redirect to={ROUTES.Console.NEW_LOGOS} />
       </Route>
       <PrivateRoute
@@ -60,6 +60,10 @@ export const ConsoleRoutes = () => {
         path={ROUTES.Console.NEW_LOGOS}
         component={newLogos}
       />
+      <PrivateRoute
+        path={ROUTES.Console.NEW_LOGOS_SIDEBAR}
+        component={LogosSideBar}
+        />
     </Switch>
   );
 };
