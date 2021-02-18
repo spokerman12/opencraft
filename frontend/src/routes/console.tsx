@@ -57,10 +57,12 @@ export const ConsoleRoutes = () => {
         component={CustomPages}
       />
       <PrivateRoute
+        exact
         path={ROUTES.Console.NEW_LOGOS}
         component={newLogos}
       />
       <PrivateRoute
+        exact
         path={ROUTES.Console.NEW_LOGOS_SIDEBAR}
         component={LogosSideBar}
         />
