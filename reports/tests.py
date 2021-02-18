@@ -22,8 +22,11 @@
 from collections import defaultdict
 from datetime import timedelta, datetime
 from unittest import mock
+from freezegun import freeze_time
 
 from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.core import mail
 from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
@@ -45,7 +48,9 @@ from reports.helpers import (
     get_billing_period,
     get_instance_charges,
 )
+from registration.models import BetaTestApplication
 from userprofile.factories import OrganizationFactory
+from .tasks import send_trial_instances_report
 
 # Tests #####################################################################
 
@@ -528,3 +533,110 @@ class ReportsHelpersTestCase(TestCase):
             date = datetime(year, month, 1)
 
         return timezone.make_aware(date)
+
+
+class ReportTaskTestCase(TestCase):
+    """
+    Tests for reports tasks execution
+    """
+
+    def test_send_trial_instances_report_failure(self):
+        """
+        Tests that if send_trial_instances_report fails because there are no matching instances
+        the recipient gets notified regardless.
+        """
+        send_trial_instances_report(recipients=['to@example.com'])
+        sent_mail = mail.outbox[0]
+        self.assertIn(
+            'Unable to generate a Trial Instances Report due to failure of `instance_statistics_csv`',
+            sent_mail.body
+        )
+        self.assertEqual(
+            [],
+            sent_mail.attachments
+        )
+        self.assertEqual(
+            ['to@example.com'],
+            sent_mail.to
+        )
+        self.assertEqual(len(mail.outbox), 1)
+
+    def test_send_trial_instances_report(self):
+        """
+        Tests that if send_trial_instances_report succeeds, the recipient receives
+        a correct report with only instances created last month.
+        """
+        date1 = "2020-01-01"
+        date2 = "2020-02-01"
+        date3 = "2020-03-01"
+
+        user1, _ = get_user_model().objects.get_or_create(
+            username='test1', email='test1@example.com')
+        user2, _ = get_user_model().objects.get_or_create(
+            username='test2', email='test2@example.com')
+        user3, _ = get_user_model().objects.get_or_create(
+            username='test3', email='test3@example.com')
+
+        with freeze_time(date1):
+            instance1 = OpenEdXInstanceFactory(
+                successfully_provisioned=True, betatestapplication=BetaTestApplication())
+            make_test_appserver(instance=instance1, is_active=True)
+            BetaTestApplication.objects.create(
+                user=user1,
+                public_contact_email='publicemail1@example.com',
+                subdomain='betatestdomain1',
+                instance_name=instance1.name,
+                status=BetaTestApplication.PENDING,
+                instance=instance1,
+            )
+        with freeze_time(date2):
+            instance2 = OpenEdXInstanceFactory(
+                successfully_provisioned=True, betatestapplication=BetaTestApplication())
+            make_test_appserver(instance=instance2, is_active=True)
+            BetaTestApplication.objects.create(
+                user=user2,
+                public_contact_email='publicemail2@example.com',
+                subdomain='betatestdomain2',
+                instance_name=instance2.name,
+                status=BetaTestApplication.PENDING,
+                instance=instance2,
+            )
+        with freeze_time(date3):
+            instance3 = OpenEdXInstanceFactory(
+                successfully_provisioned=True, betatestapplication=BetaTestApplication())
+            make_test_appserver(instance=instance3, is_active=True)
+            BetaTestApplication.objects.create(
+                user=user3,
+                public_contact_email='publicemail3@example.com',
+                subdomain='betatestdomain3',
+                instance_name=instance3.name,
+                status=BetaTestApplication.PENDING,
+                instance=instance3,
+            )
+
+            send_trial_instances_report(recipients=['to@example.com'])
+            sent_mail = mail.outbox[0]
+
+            self.assertEqual(len(mail.outbox), 1)
+
+            self.assertIn(
+                'Please find attached a CSV with the statistics for February 2020',
+                sent_mail.body
+            )
+
+            self.assertNotIn(
+                instance1.domain,
+                sent_mail.attachments[0][1]
+            )
+            self.assertIn(
+                instance2.domain,
+                sent_mail.attachments[0][1]
+            )
+            self.assertNotIn(
+                instance3.domain,
+                sent_mail.attachments[0][1]
+            )
+            self.assertEqual(
+                ['to@example.com'],
+                sent_mail.to
+            )

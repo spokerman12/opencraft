@@ -46,7 +46,8 @@ TRIAL_INSTANCES_REPORT_SCHEDULE_DAY_OF_WEEK = TRIAL_INSTANCES_REPORT_SCHEDULE[4]
         day_of_week=TRIAL_INSTANCES_REPORT_SCHEDULE_DAY_OF_WEEK
     )
 )
-def send_trial_instances_report(recipients=settings.TRIAL_INSTANCES_REPORT_RECIPIENTS):
+def send_trial_instances_report(
+        recipients=settings.TRIAL_INSTANCES_REPORT_RECIPIENTS):
     """
     Generate and send a new instance data report for the past month
 
@@ -54,7 +55,8 @@ def send_trial_instances_report(recipients=settings.TRIAL_INSTANCES_REPORT_RECIP
     """
 
     if not recipients:
-        logger.warning('No recipients listed for Trial Instances Report. It will not be generated.')
+        logger.warning(
+            'No recipients listed for Trial Instances Report. It will not be generated.')
         return True
 
     # Start with the beginning of this month
@@ -66,8 +68,9 @@ def send_trial_instances_report(recipients=settings.TRIAL_INSTANCES_REPORT_RECIP
     end_of_last_month = (beginning_of_this_month - timedelta(days=1))
     beginning_of_last_month = end_of_last_month.replace(day=1)
 
-    # Get instances with an active betatestapplication and
+    # Get instances with an active betatestapplication,
     # whose InstanceReference has an active OpenEdXAppServer
+    # and was created last month
     instances = OpenEdXInstance.objects.exclude(
         betatestapplication__isnull=True
     ).filter(
@@ -76,10 +79,10 @@ def send_trial_instances_report(recipients=settings.TRIAL_INSTANCES_REPORT_RECIP
         ref_set__created__range=[
             beginning_of_last_month.strftime("%Y-%m-%d"),
             end_of_last_month.strftime("%Y-%m-%d")
-    ])
-
-    domains = [instance.external_lms_domain or instance.internal_lms_domain for instance in instances]
-
+        ])
+    domains = [
+        instance.external_lms_domain or instance.internal_lms_domain for instance in instances
+    ]
     csv_filename = '/tmp/trial_instances_report.csv'
 
     email_subject = "{month_and_year} Trial Instances".format(
@@ -96,7 +99,8 @@ def send_trial_instances_report(recipients=settings.TRIAL_INSTANCES_REPORT_RECIP
         )
     except SystemExit:
         # The command exited prematurely. Send failure email to recipients
-        logger.error('`instance_statistics_csv` command failed. Sending notification email')
+        logger.error(
+            '`instance_statistics_csv` command failed. Sending notification email')
         email_subject += ' Failure'
         email = EmailMessage(
             email_subject,
