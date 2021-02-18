@@ -360,7 +360,7 @@ export class HeroComponent extends React.PureComponent<Props, State> {
                           this.props.clearErrorMessage('heroCover');
                         }}
                         parentMessages={messages}
-                        recommendationTextId={"heroRecommendation"}
+                        recommendationTextId="heroRecommendation"
                         reset={() => {
                           if (
                             this.activeInstanceDataExists() &&

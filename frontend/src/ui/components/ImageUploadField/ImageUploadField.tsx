@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Alert, Button, Modal, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { WrappedMessage } from 'utils/intl';
+import upArrowIcon from 'assets/uparrow.png';
 import messages from './displayMessages';
 import './styles.scss';
-import upArrowIcon from 'assets/uparrow.png';
 
 interface ImageUploadFieldProps {
   customUploadMessage: any;
@@ -24,9 +24,9 @@ export const ImageUploadField: React.FC<ImageUploadFieldProps> = (
   const [show, setShow] = React.useState(false);
   const [image, setImage] = React.useState();
 
-  let file : any = ''
-  if (image !== undefined){
-    file = image
+  let file: any = '';
+  if (image !== undefined) {
+    file = image;
   }
   const handleClose = () => setShow(false);
   const handleShow = () => {
@@ -38,20 +38,22 @@ export const ImageUploadField: React.FC<ImageUploadFieldProps> = (
     // TODO: Add extension and file validation here
     // Currently the backend handles this
     setImage(files[0]);
-    console.log(files[0])
   };
 
   let tooltip = null;
 
-  if (props.parentMessages && props.tooltipTextId){
+  if (props.parentMessages && props.tooltipTextId) {
     tooltip = (
       <Tooltip className="tooltip" id={props.tooltipTextId}>
         <p>
-          <WrappedMessage messages={props.parentMessages} id={props.tooltipTextId} />
+          <WrappedMessage
+            messages={props.parentMessages}
+            id={props.tooltipTextId}
+          />
         </p>
-        { props.tooltipImage && (
+        {props.tooltipImage && (
           <img
-            className='tooltipImage'
+            className="tooltipImage"
             src={props.tooltipImage}
             alt="tooltipImage"
           />
@@ -65,9 +67,9 @@ export const ImageUploadField: React.FC<ImageUploadFieldProps> = (
       <div className="componentHeader">
         <h4>{props.customUploadMessage}</h4>
         {tooltip && (
-            <OverlayTrigger placement="top" overlay={tooltip}>
-              <i className="fas fa-info-circle"></i>
-            </OverlayTrigger>
+          <OverlayTrigger placement="top" overlay={tooltip}>
+            <i className="fas fa-info-circle" />
+          </OverlayTrigger>
         )}
       </div>
       <Button
@@ -77,12 +79,8 @@ export const ImageUploadField: React.FC<ImageUploadFieldProps> = (
         disabled={props.loading}
         className="uploadButton"
       >
-        <div className='buttonContents'>
-          <img
-            className='uploadIcon'
-            src={upArrowIcon}
-            alt="Upload icon"
-          />
+        <div className="buttonContents">
+          <img className="uploadIcon" src={upArrowIcon} alt="Upload icon" />
           <h4>
             <WrappedMessage messages={messages} id="change" />
           </h4>
@@ -90,12 +88,13 @@ export const ImageUploadField: React.FC<ImageUploadFieldProps> = (
       </Button>
       {props.parentMessages && props.recommendationTextId && (
         <p>
-          <WrappedMessage messages={props.parentMessages} id={props.recommendationTextId} />
+          <WrappedMessage
+            messages={props.parentMessages}
+            id={props.recommendationTextId}
+          />
         </p>
       )}
-      <h3>
-        { file.name }
-      </h3>
+      <h3>{file.name}</h3>
       {props.error && (
         <p>
           <Alert className="error-box" variant="danger">

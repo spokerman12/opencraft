@@ -11,8 +11,8 @@ import { connect } from 'react-redux';
 import { RootState } from 'global/state';
 import { WrappedMessage } from 'utils/intl';
 import { clearErrorMessage, updateImages } from 'console/actions';
+import faviconTooltipImage from 'assets/faviconTooltipImage.png';
 import messages from './displayMessages';
-import faviconTooltipImage from 'assets/faviconTooltipImage.png'
 
 interface State {}
 interface ActionProps {
@@ -52,21 +52,21 @@ export class LogosComponent extends React.PureComponent<Props, State> {
                 </div>
               </Col>
             </Row>
-              <ImageUploadField
-                customUploadMessage={
-                  <WrappedMessage messages={messages} id="siteLogo" />
-                }
-                updateImage={(image: File) => {
-                  this.updateImage('logo', image);
-                }}
-                parentMessages={messages}
-                recommendationTextId="logoRecommendation"
-                error={instance.feedback.logo}
-                clearError={() => {
-                  this.props.clearErrorMessage('logo');
-                }}
-                tooltipTextId="logoTooltip"
-              />
+            <ImageUploadField
+              customUploadMessage={
+                <WrappedMessage messages={messages} id="siteLogo" />
+              }
+              updateImage={(image: File) => {
+                this.updateImage('logo', image);
+              }}
+              parentMessages={messages}
+              recommendationTextId="logoRecommendation"
+              error={instance.feedback.logo}
+              clearError={() => {
+                this.props.clearErrorMessage('logo');
+              }}
+              tooltipTextId="logoTooltip"
+            />
             <Row>
               <Col md={3} className="image-container">
                 <div>
@@ -76,22 +76,22 @@ export class LogosComponent extends React.PureComponent<Props, State> {
                 </div>
               </Col>
             </Row>
-              <ImageUploadField
-                customUploadMessage={
-                  <WrappedMessage messages={messages} id="favicon" />
-                }
-                updateImage={(image: File) => {
-                  this.updateImage('favicon', image);
-                }}
-                parentMessages={messages}
-                recommendationTextId="faviconRecommendation"
-                error={instance.feedback.favicon}
-                clearError={() => {
-                  this.props.clearErrorMessage('favicon');
-                }}
-                tooltipTextId="faviconTooltip"
-                tooltipImage={faviconTooltipImage}
-              />
+            <ImageUploadField
+              customUploadMessage={
+                <WrappedMessage messages={messages} id="favicon" />
+              }
+              updateImage={(image: File) => {
+                this.updateImage('favicon', image);
+              }}
+              parentMessages={messages}
+              recommendationTextId="faviconRecommendation"
+              error={instance.feedback.favicon}
+              clearError={() => {
+                this.props.clearErrorMessage('favicon');
+              }}
+              tooltipTextId="faviconTooltip"
+              tooltipImage={faviconTooltipImage}
+            />
           </ConsolePageCustomizationContainer>
         </div>
       </ConsolePage>
